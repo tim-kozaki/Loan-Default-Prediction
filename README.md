@@ -86,15 +86,41 @@
 
 ![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_alpha.png)
 
+--------
+**AdaBoostClassifier**   
 
-- AdaBoostClassifier
+**Best Score:** 0.825
+**Best Paramters:** 'base_estimator__max_depth': 7, 'learning_rate': 0.9, 'n_estimators': 100   
+
+**Training Score:** 0.894
+**Test Score:**     0.824
+
+**Specificity:**     0.945
+**Precision:**       0.644
+**Recall:**          0.369
+**Accuracy Score:**  0.824
+**F1:**              0.469
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/ada_matrix.png)
+
+--------
 - GradientBoostingClassifier
-- VotingClassifier
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_matrix.png)
 
+--------
+**VotingClassifier**
 
- -----
+**Best Score:** 0.814
+**Best Paramters:** 'ada__n_estimators': 175, 'gb__n_estimators': 200, 'tree__max_depth': None
+
+**Training Score:** 0.851
+**Test Score:**     0.819
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/vc_matrix.png)
+ -------
  
  ### Future Improvements
  
 - Extracting additional information on the companies such as their annual financial reports, credit information from ACRA & BRC reports. 
-- 
+- Further model explorations with RandomForests, XGBoost. 
+- Implement model into a web application, and connect the results into a Tableau dashboard for visualizations. 
