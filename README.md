@@ -12,73 +12,89 @@
 ### About the Data
 
 - Real loan information is extracted from a company that offers SME financing across Southeast Asia. 
-- For confidentiality reasons, the company will not be revealed. 
-- Company names are masked with unique identifiers
+- For confidentiality reasons, the company are not revealed. 
+- Company names are masked with unique identifiers and additional information was limited. 
 - Singapore Standard Industrial Classification are used to identify the companies industry. 
-- Loan information such as amount, insured, date, tenor period, status, and delinquency of payments.
+- Loan information consisted of product types, amount, insurance, date, tenor period, status, and delinquency of payments.
 - Data imbalance existed where the target value only made up 16% of the data set. 
 
-<insert image>
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/imbalance.png)
 
 ### Data Preparation
 
 - Null values were found in the data set and were either removed or filled using external data collected through web scraping.
-- Title, Selftext, and Subreddit features were retained.
-- Punctuations were removed using NLP & Regex.
-- Genshin Impact encoded to 0.
-- Honkai Impact encoded to 1.
+- Date values were reconfigured into individual features into Weekday | Day | Month | Year
+- Imbalance issue was resolved using over sampling, under sampling, and a mix of both over & under sampling.
+
 
 ### Key Features
- - subreddit (interger: 0 | 1)
- - title (String)
-
-### Additional Features
-
-Over 10,000 additional features derived from the word content in title & selftext, created by using CountVectorizer .
+ - SSIC
+ - Product
+ - Weekday
+ - Day
+ - Month
+ - Year
+ - Tenor
+ - Interest Rate
+ - Loan Amount
+ - Disbursal Amount
+ - Monthly Payment Amount
+ - Payment Amount
+ - Insured
+ - Defaulted
 
 ------
 
 ### Modelling & Evaluation
  
- Two pipelines were developed and used in the modelling:
- 
- <b>First Pipeline:</b>
- - CountVectorizer
- - RandomForests
- 
- ![](https://git.generalassemb.ly/tim-kozaki/dsif2_projects/blob/master/project_3/images/randomforests_results.png)
- ![](https://git.generalassemb.ly/tim-kozaki/dsif2_projects/blob/master/project_3/images/randomforests_matrix.png)
- 
- <b>Evaluation Results:</b>
- 5-fold Cross validation score: 0.74   
- Training score: 0.99    
- Testing score: 0.78    
- Grid Search (Best score): 0.74   
- Specificity: 0.74    
- Accuracy score: 0.78   
- ROC AUC: 0.87   
- 
- <b>Second Pipeline:</b>
- - CountVectorizer
- - MultinomialNB
- 
- ![](https://git.generalassemb.ly/tim-kozaki/dsif2_projects/blob/master/project_3/images/multinomialnb_results.png)
- ![](https://git.generalassemb.ly/tim-kozaki/dsif2_projects/blob/master/project_3/images/multinomialnb_matrix.png)
- 
-  <b>Evaluation Results:</b>
- 5-fold Cross validation score: 0.78   
- Training score: 0.95    
- Testing score: 0.81    
- Grid Search (Best score): 0.78   
- Specificity: 0.82    
- Accuracy score: 0.81   
- ROC AUC: 0.90   
+--------
+**Logistic Regression**
+- Over/Under Sampling Mix 
+
+**Intercept:** 3.93104947e-09    
+**Coefficient:**
+1.00000235    
+1.00000022    
+1.00000017   
+1.00000397  
+0.99999681  
+1.0000071 
+0.99999652   
+1.00000015   
+0.9999377  
+1.00004443     
+1.00001859    
+0.99999989   
+
+**Training Score:** 0.586   
+**Test Score:**     0.573    
+
+**Specificity:**     0.188   
+**Precision:**       0.539   
+**Recall:**          0.966   
+**Accuracy Score:**  0.573   
+**F1:**              0.692 
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_matrix_1.png)
+------
+**DecisionTreeClassifier**  
+
+**Training Score:** 0.587    
+**Test Score:**     0.573     
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_matrix.png)
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_alpha.png)
+
+
+- AdaBoostClassifier
+- GradientBoostingClassifier
+- VotingClassifier
 
 
  -----
  
  ### Future Improvements
  
-- Identify and develop keywords used uniquely for each subreddit. For example, unique character names in each game.
-- Address overfitting of the models.
-- Train and test the data with other models.
+- Extracting additional information on the companies such as their annual financial reports, credit information from ACRA & BRC reports. 
+- 
