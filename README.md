@@ -22,7 +22,7 @@
 
 ### Data Preparation
 
-- Null values were found in the data set and were either removed or filled using external data collected through web scraping.
+- Null values in the data set were removed or filled using external data collected through web scraping.
 - Date values were reconfigured into individual features into Weekday | Day | Month | Year
 - Imbalance issue was resolved using over sampling, under sampling, and a mix of both over & under sampling.
 
