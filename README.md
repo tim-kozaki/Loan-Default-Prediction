@@ -1428,7 +1428,7 @@
 
 | Baseline  | 0.50  |
 | ------------- | ------------- |
-| ROC AUC  | 0.907  |
+| ROC AUC  | 0.822  |
 
 ![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_3_nodes.png)        
 ![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_3_auc_roc.png)     
@@ -1766,7 +1766,678 @@
 
 </details>
 
+------------      
 
+## DecisionTreeClassifier with Mixed-sampling    
+
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.856  |
+| Test  | 0.816  |
+| Specificity  | 0.780  |
+| Precision  | 0.796  |
+| Recall  | 0.852  |
+| Accuracy  | 0.816  |
+| F1  | 0.823  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_4_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_4.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.900  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_4_nodes.png)        
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_4_auc_roc.png)     
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_4_tree.png)     
+
+<details><summary>DecisionTree Details</summary>
+<p>|--- Tenor <= 5.50
+<p>|   |--- Year <= 2021.50
+<p>|   |   |--- Interest Rate <= 0.53
+<p>|   |   |   |--- Weekday <= 5.50
+<p>|   |   |   |   |--- Amount <= 247600.00
+<p>|   |   |   |   |   |--- Interest Rate <= 0.47
+<p>|   |   |   |   |   |   |--- Year <= 2019.50
+<p>|   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Year >  2019.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Interest Rate >  0.47
+<p>|   |   |   |   |   |   |--- Day <= 22.50
+<p>|   |   |   |   |   |   |   |--- Payment Amount <= 7790.00
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Payment Amount >  7790.00
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Day >  22.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- Amount >  247600.00
+<p>|   |   |   |   |   |--- class: 0
+<p>|   |   |   |--- Weekday >  5.50
+<p>|   |   |   |   |--- Day <= 29.50
+<p>|   |   |   |   |   |--- Insured <= 0.50
+<p>|   |   |   |   |   |   |--- SSIC <= 46276.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- SSIC >  46276.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Insured >  0.50
+<p>|   |   |   |   |   |   |--- Year <= 2019.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Year >  2019.50
+<p>|   |   |   |   |   |   |   |--- SSIC <= 36048.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- SSIC >  36048.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- Day >  29.50
+<p>|   |   |   |   |   |--- class: 1
+<p>|   |   |--- Interest Rate >  0.53
+<p>|   |   |   |--- Year <= 2020.50
+<p>|   |   |   |   |--- Tenor <= 4.50
+<p>|   |   |   |   |   |--- Tenor <= 3.50
+<p>|   |   |   |   |   |   |--- Interest Rate <= 1.11
+<p>|   |   |   |   |   |   |   |--- Payment Amount <= 6195.17
+<p>|   |   |   |   |   |   |   |   |--- Product <= 4.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 7.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 1812.06
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  1812.06
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  7.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |--- Product >  4.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 11.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 3174.26
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  3174.26
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  11.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Payment Amount >  6195.17
+<p>|   |   |   |   |   |   |   |   |--- Year <= 2018.50
+<p>|   |   |   |   |   |   |   |   |   |--- Tenor <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 39651.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  39651.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Tenor >  2.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 0.84
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  0.84
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |--- Year >  2018.50
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate <= 0.69
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate >  0.69
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |--- Interest Rate >  1.11
+<p>|   |   |   |   |   |   |   |--- SSIC <= 10410.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- SSIC >  10410.50
+<p>|   |   |   |   |   |   |   |   |--- Product <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate <= 1.45
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 1.32
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  1.32
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate >  1.45
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 1470.35
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  1470.35
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+<p>|   |   |   |   |   |   |   |   |--- Product >  2.50
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday <= 6.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 29.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  29.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday >  6.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Tenor >  3.50
+<p>|   |   |   |   |   |   |--- SSIC <= 79658.00
+<p>|   |   |   |   |   |   |   |--- Interest Rate <= 1.35
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 45226.50
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 4.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  4.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  45226.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 6.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 61710.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  61710.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  6.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 11.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  11.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Interest Rate >  1.35
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 54459.50
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate <= 1.77
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- Interest Rate >  1.77
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 17290.80
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  17290.80
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  54459.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 6.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  6.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |--- SSIC >  79658.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- Tenor >  4.50
+<p>|   |   |   |   |   |--- Interest Rate <= 0.61
+<p>|   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |--- Month <= 2.50
+<p>|   |   |   |   |   |   |   |   |--- Day <= 7.00
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount <= 22628.77
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount >  22628.77
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- Day >  7.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Month >  2.50
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 29204.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 6.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  2.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  6.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  29204.50
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 35559.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 12.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  12.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  35559.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  6.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |--- Year <= 2019.50
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 28.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  28.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday >  2.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 24888.90
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  24888.90
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Year >  2019.50
+<p>|   |   |   |   |   |   |   |   |   |--- Amount <= 44300.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Amount >  44300.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |--- Amount <= 4750.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Amount >  4750.00
+<p>|   |   |   |   |   |   |   |   |   |--- Amount <= 20100.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |--- Amount >  20100.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Interest Rate >  0.61
+<p>|   |   |   |   |   |   |--- SSIC <= 79658.00
+<p>|   |   |   |   |   |   |   |--- Payment Amount <= 5117.08
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 76148.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 11.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 35555.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  35555.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  11.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount <= 3050.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount >  3050.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  76148.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 4.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 21.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  21.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  4.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 2754.27
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  2754.27
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |--- Payment Amount >  5117.08
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 28207.00
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 26512.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 22666.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  22666.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  26512.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 5.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  5.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  28207.00
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 29205.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  29205.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 71127.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  71127.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+<p>|   |   |   |   |   |   |--- SSIC >  79658.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |--- Year >  2020.50
+<p>|   |   |   |   |--- Month <= 11.50
+<p>|   |   |   |   |   |--- SSIC <= 30556.50
+<p>|   |   |   |   |   |   |--- Product <= 2.50
+<p>|   |   |   |   |   |   |   |--- Interest Rate <= 1.55
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 28206.00
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 9.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 52420.55
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  52420.55
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  9.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 27.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  27.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  28206.00
+<p>|   |   |   |   |   |   |   |   |   |--- Day <= 24.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 0.65
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  0.65
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- Day >  24.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 1.43
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  1.43
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Interest Rate >  1.55
+<p>|   |   |   |   |   |   |   |   |--- Disbursal Amount <= 58397.44
+<p>|   |   |   |   |   |   |   |   |   |--- Day <= 15.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |--- Day >  15.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Disbursal Amount >  58397.44
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Product >  2.50
+<p>|   |   |   |   |   |   |   |--- Interest Rate <= 0.65
+<p>|   |   |   |   |   |   |   |   |--- Day <= 25.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 29204.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  29204.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 9.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  9.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |--- Day >  25.50
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 29204.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  29204.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Interest Rate >  0.65
+<p>|   |   |   |   |   |   |   |   |--- Product <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 27207.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  27207.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount <= 4600.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount >  4600.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |--- Product >  3.50
+<p>|   |   |   |   |   |   |   |   |   |--- Day <= 12.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- Day >  12.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 5348.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  5348.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+<p>|   |   |   |   |   |--- SSIC >  30556.50
+<p>|   |   |   |   |   |   |--- Interest Rate <= 1.05
+<p>|   |   |   |   |   |   |   |--- SSIC <= 57156.00
+<p>|   |   |   |   |   |   |   |   |--- Tenor <= 1.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- Tenor >  1.50
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 46760.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 33659.39
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  33659.39
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  46760.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 17931.23
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  17931.23
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |--- SSIC >  57156.00
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 79658.00
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 0.69
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  0.69
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 71125.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  71125.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  79658.00
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday <= 4.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 28134.32
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  28134.32
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |--- Weekday >  4.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Interest Rate >  1.05
+<p>|   |   |   |   |   |   |   |--- Interest Rate <= 1.77
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 46556.00
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 45105.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Product <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |   |--- Product >  2.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  45105.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 4.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  4.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  46556.00
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 4990.19
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  4990.19
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  8.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 70202.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  70202.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Interest Rate >  1.77
+<p>|   |   |   |   |   |   |   |   |--- Month <= 2.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Month >  2.50
+<p>|   |   |   |   |   |   |   |   |   |--- Day <= 10.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- Day >  10.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 5.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  5.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |--- Month >  11.50
+<p>|   |   |   |   |   |--- Day <= 5.50
+<p>|   |   |   |   |   |   |--- Amount <= 5250.00
+<p>|   |   |   |   |   |   |   |--- Interest Rate <= 0.61
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Interest Rate >  0.61
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |--- Amount >  5250.00
+<p>|   |   |   |   |   |   |   |--- Disbursal Amount <= 15585.46
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Disbursal Amount >  15585.46
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 39610.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  39610.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |--- Day >  5.50
+<p>|   |   |   |   |   |   |--- Payment Amount <= 1437.52
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Payment Amount >  1437.52
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |--- Year >  2021.50
+<p>|   |   |--- Payment Amount <= 1351.03
+<p>|   |   |   |--- class: 0
+<p>|   |   |--- Payment Amount >  1351.03
+<p>|   |   |   |--- class: 0
+<p>|--- Tenor >  5.50
+<p>|   |--- Year <= 2021.50
+<p>|   |   |--- Tenor <= 10.50
+<p>|   |   |   |--- Year <= 2018.50
+<p>|   |   |   |   |--- SSIC <= 72656.00
+<p>|   |   |   |   |   |--- Weekday <= 4.50
+<p>|   |   |   |   |   |   |--- Month <= 10.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Month >  10.50
+<p>|   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |--- Weekday >  4.50
+<p>|   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- SSIC >  72656.00
+<p>|   |   |   |   |   |--- class: 0
+<p>|   |   |   |--- Year >  2018.50
+<p>|   |   |   |   |--- Month <= 6.50
+<p>|   |   |   |   |   |--- Weekday <= 4.50
+<p>|   |   |   |   |   |   |--- Year <= 2019.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Year >  2019.50
+<p>|   |   |   |   |   |   |   |--- Disbursal Amount <= 14438.25
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Disbursal Amount >  14438.25
+<p>|   |   |   |   |   |   |   |   |--- Day <= 9.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Day >  9.50
+<p>|   |   |   |   |   |   |   |   |   |--- Year <= 2020.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 2.38
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  2.38
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |--- Year >  2020.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Weekday >  4.50
+<p>|   |   |   |   |   |   |--- Payment Amount <= 8964.02
+<p>|   |   |   |   |   |   |   |--- SSIC <= 47677.00
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- SSIC >  47677.00
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Payment Amount >  8964.02
+<p>|   |   |   |   |   |   |   |--- Weekday <= 6.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Weekday >  6.50
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |--- Month >  6.50
+<p>|   |   |   |   |   |--- Payment Amount <= 5423.77
+<p>|   |   |   |   |   |   |--- SSIC <= 44700.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- SSIC >  44700.50
+<p>|   |   |   |   |   |   |   |--- SSIC <= 47106.50
+<p>|   |   |   |   |   |   |   |   |--- Amount <= 22500.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- Amount >  22500.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- SSIC >  47106.50
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 72196.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  72196.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Payment Amount >  5423.77
+<p>|   |   |   |   |   |   |--- class: 0
+<p>|   |   |--- Tenor >  10.50
+<p>|   |   |   |--- Month <= 11.50
+<p>|   |   |   |   |--- Month <= 10.50
+<p>|   |   |   |   |   |--- Day <= 2.50
+<p>|   |   |   |   |   |   |--- Weekday <= 5.50
+<p>|   |   |   |   |   |   |   |--- Month <= 4.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Month >  4.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Weekday >  5.50
+<p>|   |   |   |   |   |   |   |--- SSIC <= 47001.00
+<p>|   |   |   |   |   |   |   |   |--- Month <= 7.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- Month >  7.00
+<p>|   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- SSIC >  47001.00
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Day >  2.50
+<p>|   |   |   |   |   |   |--- Interest Rate <= 1.93
+<p>|   |   |   |   |   |   |   |--- Year <= 2019.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Year >  2019.50
+<p>|   |   |   |   |   |   |   |   |--- SSIC <= 43905.50
+<p>|   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 95185.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 24.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  24.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  95185.00
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 35559.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  35559.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- SSIC >  43905.50
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount <= 13007.85
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount <= 23796.25
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |   |--- Disbursal Amount >  23796.25
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount >  13007.85
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Interest Rate >  1.93
+<p>|   |   |   |   |   |   |   |--- Year <= 2020.50
+<p>|   |   |   |   |   |   |   |   |--- Interest Rate <= 2.38
+<p>|   |   |   |   |   |   |   |   |   |--- Day <= 24.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount <= 90000.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Amount >  90000.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |   |   |--- Day >  24.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month <= 9.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+<p>|   |   |   |   |   |   |   |   |   |   |--- Month >  9.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |--- Interest Rate >  2.38
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 31006.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  31006.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 47262.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  47262.00
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+<p>|   |   |   |   |   |   |   |--- Year >  2020.50
+<p>|   |   |   |   |   |   |   |   |--- Payment Amount <= 7828.10
+<p>|   |   |   |   |   |   |   |   |   |--- Amount <= 66087.62
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day <= 28.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+<p>|   |   |   |   |   |   |   |   |   |   |--- Day >  28.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- Amount >  66087.62
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount <= 6695.72
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- Payment Amount >  6695.72
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Payment Amount >  7828.10
+<p>|   |   |   |   |   |   |   |   |   |--- Month <= 7.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate <= 2.38
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+<p>|   |   |   |   |   |   |   |   |   |   |--- Interest Rate >  2.38
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+<p>|   |   |   |   |   |   |   |   |   |--- Month >  7.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- Month >  10.50
+<p>|   |   |   |   |   |--- Disbursal Amount <= 98395.00
+<p>|   |   |   |   |   |   |--- SSIC <= 47001.00
+<p>|   |   |   |   |   |   |   |--- SSIC <= 38500.50
+<p>|   |   |   |   |   |   |   |   |--- Disbursal Amount <= 48662.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Disbursal Amount >  48662.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- SSIC >  38500.50
+<p>|   |   |   |   |   |   |   |   |--- Weekday <= 3.50
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC <= 42109.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |   |--- SSIC >  42109.50
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC <= 46450.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |   |--- SSIC >  46450.50
+<p>|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |   |--- Weekday >  3.50
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount <= 5718.03
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |   |--- Payment Amount >  5718.03
+<p>|   |   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- SSIC >  47001.00
+<p>|   |   |   |   |   |   |   |--- Day <= 23.50
+<p>|   |   |   |   |   |   |   |   |--- Amount <= 31080.16
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Amount >  31080.16
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Day >  23.50
+<p>|   |   |   |   |   |   |   |   |--- Day <= 26.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |   |--- Day >  26.50
+<p>|   |   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Disbursal Amount >  98395.00
+<p>|   |   |   |   |   |   |--- Year <= 2020.50
+<p>|   |   |   |   |   |   |   |--- Day <= 20.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |   |--- Day >  20.50
+<p>|   |   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Year >  2020.50
+<p>|   |   |   |   |   |   |   |--- Day <= 29.50
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |   |   |   |   |--- Day >  29.50
+<p>|   |   |   |   |   |   |   |   |--- class: 1
+<p>|   |   |   |--- Month >  11.50
+<p>|   |   |   |   |--- Disbursal Amount <= 19037.00
+<p>|   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |--- Disbursal Amount >  19037.00
+<p>|   |   |   |   |   |--- Weekday <= 1.50
+<p>|   |   |   |   |   |   |--- Disbursal Amount <= 90399.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Disbursal Amount >  90399.00
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |--- Weekday >  1.50
+<p>|   |   |   |   |   |   |--- Weekday <= 2.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |   |   |   |   |   |--- Weekday >  2.50
+<p>|   |   |   |   |   |   |   |--- class: 0
+<p>|   |--- Year >  2021.50
+<p>|   |   |--- class: 0
+ 
+</details>
+ 
 --------
 **AdaBoostClassifier**   
 
