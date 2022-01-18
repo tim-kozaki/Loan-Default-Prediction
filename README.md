@@ -50,7 +50,7 @@
 --------
 ## Logistic Regression
      
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.363  |
 | Test  | 0.367  |
@@ -69,7 +69,7 @@
 
 -----------
 ## Logistic Regression with Over-sampling     
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.595  |
 | Test  | 0.598  |
@@ -87,7 +87,7 @@
 | ROC AUC  | 0.640  |
 ------------
 ## Logistic Regression with Under-sampling     
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.597  |
 | Test  | 0.585  |
@@ -105,7 +105,7 @@
 | ROC AUC  | 0.620  |
 ------------
 ## Logistic Regression with Mixed-sampling
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.594  |
 | Test  | 0.599  |
@@ -124,7 +124,7 @@
 ------------
 
 ## DecisionTreeClassifier
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.786  |
 | Test  | 0.751  |
@@ -735,7 +735,7 @@
 
 ## DecisionTreeClassifier with Over-sampling    
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.856  |
 | Test  | 0.817  |
@@ -1413,7 +1413,7 @@
 
 ## DecisionTreeClassifier with Under-sampling    
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.766  |
 | Test  | 0.732  |
@@ -1770,7 +1770,7 @@
 
 ## DecisionTreeClassifier with Mixed-sampling    
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.856  |
 | Test  | 0.816  |
@@ -2441,7 +2441,7 @@
 --------
 ## AdaBoostClassifier
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training  | 0.887  |
 | Test  | 0.860  |
@@ -2461,7 +2461,7 @@
 --------
 ## GradientBoostingClassifier
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training     | 0.878  |
 | Test         | 0.855  |
@@ -2481,7 +2481,7 @@
 --------
 ## GradientBoostingClassifier with Over-sampling
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training     | 0.993  |
 | Test         | 0.975  |
@@ -2501,7 +2501,7 @@
 --------
 ## GradientBoostingClassifier with Under-sampling
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training     | 0.747  |
 | Test         | 0.714  |
@@ -2521,7 +2521,7 @@
 --------
 ## GradientBoostingClassifier with Mixed-sampling
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training     | 0.882  |
 | Test         | 0.842  |
@@ -2544,7 +2544,7 @@
 
 The VotingClassifer is set to use DecisionTreeClassifier(), AdaBoostClassifier(), GradientBoostingClassifer() and used a GridSearchCV() to find the best score and parameters. 
 
-| -  | Score |
+| Measure  | Score |
 | ------------- | ------------- |
 | Training     | 0.870  |
 | Test         | 0.856  |
