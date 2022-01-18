@@ -1,15 +1,15 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone: Loan Default Prediction
 
-### Overview
+## Overview
 
 - The main objective of this project is to predict whether a loan will be defaulted in the period of repayment by a company. 
 
-### Problem Statement
+## Problem Statement
 
 - This project aims to develop a classification model to identify whether a loan will be defaulted during the tenor of the loan repayment by a company. 
 -----
 
-### About the Data
+## About the Data
 
 - Real loan information is extracted from a company that offers SME financing across Southeast Asia. 
 - For confidentiality reasons, the company are not revealed. 
@@ -20,14 +20,14 @@
 
 ![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/imbalance.png)
 
-### Data Preparation
+## Data Preparation
 
 - Null values in the data set were removed or filled using external data collected through web scraping.
 - Date values were reconfigured into individual features into Weekday | Day | Month | Year
 - Imbalance issue was resolved using over sampling, under sampling, and a mix of both over & under sampling.
 
 
-### Key Features
+## Key Features
  - SSIC
  - Product
  - Weekday
@@ -45,46 +45,111 @@
 
 ------
 
-### Modelling & Evaluation
+## Modelling & Evaluation
  
 --------
-**Logistic Regression**
-- Over/Under Sampling Mix 
+## Logistic Regression
+     
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.363  |
+| Test  | 0.367  |
+| Specificity  | 0.255  |
+| Precision  | 0.200  |
+| Recall  | 0.925  |
+| Accuracy  | 0.367  |
+| F1  | 0.328  |
 
-**Intercept:** 3.93104947e-09    
-**Coefficient:**
-1.00000235    
-1.00000022    
-1.00000017   
-1.00000397  
-0.99999681  
-1.0000071 
-0.99999652   
-1.00000015   
-0.9999377  
-1.00004443     
-1.00001859    
-0.99999989   
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_1_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_1.png)      
 
-**Training Score:** 0.586   
-**Test Score:**     0.573    
+| Baseline  | 0.50 |
+| ------------- | ------------- |
+| ROC AUC  | 0.621  |
 
-**Specificity:**     0.188   
-**Precision:**       0.539   
-**Recall:**          0.966   
-**Accuracy Score:**  0.573   
-**F1:**              0.692 
+-----------
+## Logistic Regression with Over-sampling     
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.595  |
+| Test  | 0.598  |
+| Specificity  | 0.280  |
+| Precision  | 0.556  |
+| Recall  | 0.923  |
+| Accuracy  | 0.598  |
+| F1  | 0.694  |
 
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_matrix_1.png)
-------
-**DecisionTreeClassifier**  
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_2_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_2.png)     
 
-**Training Score:** 0.587    
-**Test Score:**     0.573     
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.640  |
+------------
+## Logistic Regression with Under-sampling     
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.597  |
+| Test  | 0.585  |
+| Specificity  | 0.286  |
+| Precision  | 0.545  |
+| Recall  | 0.901  |
+| Accuracy  | 0.585  |
+| F1  | 0.679  |
 
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_matrix.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_3_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_3.png)     
 
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/dt_alpha.png)
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.620  |
+------------
+## Logistic Regression with Mixed-sampling
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.594  |
+| Test  | 0.599  |
+| Specificity  | 0.269  |
+| Precision  | 0.561  |
+| Recall  | 0.926  |
+| Accuracy  | 0.599  |
+| F1  | 0.698  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_4_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_4.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.625  |
+------------
+
+## DecisionTreeClassifier
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.594  |
+| Test  | 0.599  |
+| Specificity  | 0.269  |
+| Precision  | 0.561  |
+| Recall  | 0.926  |
+| Accuracy  | 0.599  |
+| F1  | 0.698  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_4_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/lr_4.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.625  |
+------------
+
+
+
+
+
+
+
+
+
 
 --------
 **AdaBoostClassifier**   
@@ -132,4 +197,4 @@ The scores were good and slightly overfitted, but failed to predict the attended
  
 - Extracting additional information on the companies such as their annual financial reports, credit information from ACRA & BRC reports. 
 - Further model explorations with RandomForests, XGBoost. 
-- Implement model into a web application, and connect the results into a Tableau dashboard for visualizations. 
+- Implement model into a web application, and connect the results into a dashboard for visualizations. 
