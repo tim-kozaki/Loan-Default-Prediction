@@ -2439,49 +2439,127 @@
 </details>
  
 --------
-**AdaBoostClassifier**   
+## AdaBoostClassifier
 
-**Best Score:** 0.825     
-**Best Paramters:** 'base_estimator__max_depth': 7, 'learning_rate': 0.9, 'n_estimators': 100   
+| -  | Score |
+| ------------- | ------------- |
+| Training  | 0.887  |
+| Test  | 0.860  |
+| Specificity  | 0.979  |
+| Precision  | 0.672  |
+| Recall  | 0.232  |
+| Accuracy  | 0.860  |
+| F1  | 0.345  |
 
-**Training Score:** 0.894   
-**Test Score:**     0.824   
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/ada_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/ada.png)     
 
-**Specificity:**     0.945  
-**Precision:**       0.644   
-**Recall:**          0.369  
-**Accuracy Score:**  0.824   
-**F1:**              0.469     
-
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/ada_matrix.png)
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.852  |
 
 --------
-- GradientBoostingClassifier
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_matrix.png)
+## GradientBoostingClassifier
+
+| -  | Score |
+| ------------- | ------------- |
+| Training     | 0.878  |
+| Test         | 0.855  |
+| Specificity  | 0.986  |
+| Precision    | 0.743  |
+| Recall       | 0.202  |
+| Accuracy     | 0.855  |
+| F1           | 0.318  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_1_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_1.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.830  |
 
 --------
-**VotingClassifier**
+## GradientBoostingClassifier with Over-sampling
 
-The VotingClassifer used DecisionTreeClassifier(), AdaBoostClassifier(), GradientBoostingClassifer() and used a GridSearchCV() to find the best score and parameters. 
-The scores were good and slightly overfitted, but failed to predict the attended target. 
+| -  | Score |
+| ------------- | ------------- |
+| Training     | 0.993  |
+| Test         | 0.975  |
+| Specificity  | 0.971  |
+| Precision    | 0.872  |
+| Recall       | 0.995  |
+| Accuracy     | 0.975  |
+| F1           | 0.929  |
 
-**Best Score:** 0.814    
-**Best Paramters:** 'ada__n_estimators': 175, 'gb__n_estimators': 200, 'tree__max_depth': None
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_2_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_2.png)     
 
-**Training Score:** 0.851   
-**Test Score:**     0.819   
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.996  |
 
-**Specificity:**     0.965  
-**Precision:**       0.678   
-**Recall:**          0.273   
-**Accuracy Score:**  0.819   
-**F1:**              0.39    
+--------
+## GradientBoostingClassifier with Under-sampling
 
-![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/vc_matrix.png)
+| -  | Score |
+| ------------- | ------------- |
+| Training     | 0.747  |
+| Test         | 0.714  |
+| Specificity  | 0.599  |
+| Precision    | 0.674  |
+| Recall       | 0.830  |
+| Accuracy     | 0.714  |
+| F1           | 0.744  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_3_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_3.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.799  |
+
+--------
+## GradientBoostingClassifier with Mixed-sampling
+
+| -  | Score |
+| ------------- | ------------- |
+| Training     | 0.882  |
+| Test         | 0.842  |
+| Specificity  | 0.833  |
+| Precision    | 0.517  |
+| Recall       | 0.892  |
+| Accuracy     | 0.842  |
+| F1           | 0.654  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_4_roc.png)
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/gb_4.png)     
+
+| Baseline  | 0.50  |
+| ------------- | ------------- |
+| ROC AUC  | 0.942  |
+
+----------------
+
+## VotingClassifier
+
+The VotingClassifer is set to use DecisionTreeClassifier(), AdaBoostClassifier(), GradientBoostingClassifer() and used a GridSearchCV() to find the best score and parameters. 
+
+| -  | Score |
+| ------------- | ------------- |
+| Training     | 0.870  |
+| Test         | 0.856  |
+| Specificity  | 0.986  |
+| Precision    | 0.695  |
+| Recall       | 0.168  |
+| Accuracy     | 0.856  |
+| F1           | 0.271  |
+
+![](https://github.com/tim-kozaki/Loan-Default-Prediction/blob/main/image/vc.png)     
+
  -------
  
- ### Future Improvements
+ ## Future Improvements
  
-- Extracting additional information on the companies such as their annual financial reports, credit information from ACRA & BRC reports. 
+- Extracting additional features on the companies such as their annual financial reports, credit information from ACRA & BRC reports. 
 - Further model explorations with RandomForests, XGBoost. 
 - Implement model into a web application, and connect the results into a dashboard for visualizations. 
